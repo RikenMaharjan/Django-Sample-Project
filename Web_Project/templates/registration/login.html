@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+    <!-- Simplebar -->
+    <link type="text/css" href="{% static 'assets/vendor/simplebar.min.css' %}" rel="stylesheet">
+    <!-- App CSS -->
+    <link type="text/css" href="{% static 'assets/css/app.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/app.rtl.css' %}" rel="stylesheet">
+    <!-- Material Design Icons -->
+    <link type="text/css" href="{% static 'assets/css/vendor-material-icons.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-material-icons.rtl.css' %}" rel="stylesheet">
+    <!-- Font Awesome FREE Icons -->
+    <link type="text/css" href="{% static 'assets/css/vendor-fontawesome-free.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-fontawesome-free.rtl.css' %}" rel="stylesheet">
+    <!-- ion Range Slider -->
+    <link type="text/css" href="{% static 'assets/css/vendor-ion-rangeslider.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/vendor-ion-rangeslider.rtl.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'assets/css/editedstyle.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout-login-centered-boxed" id="login-connect">
+
+        <div class="layout-login-centered-boxed__form login-maxwidth">
+            <div class="text-center pomelo-crm-login-logo">
+                <img src="#" width="30%" alt="">
+                <p>Login Form</p>
+            </div>
+            <div class="card">
+                <div class="login-inner">
+                    {% if msg_error %}
+                    <div class="alert alert-soft-danger d-flex" role="alert">
+                        <i class="material-icons mr-3">check_circle</i>
+                        <div class="text-body">{{ msg_error }}</div>
+                    </div>
+                    {% endif %}
+
+                    <form action="" method="post">
+                            {% csrf_token %}
+                        <div class="form-group">
+                            <label class="text-label" for="email_2">{{form.username.label}}:</label>
+                            <div class="input-group input-group-merge">
+                                {{ form.username }}
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="far fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-label" for="password_2">{{form.password.label}}:</label>
+                            <div class="input-group input-group-merge">
+                                {{ form.password }}
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="fa fa-key"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jk-form-login form-group jk-signup-form">
+                            <button type="submit" class="btn  btn-block btn-outline-dark">LOGIN</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+<!--    <script src="{% static 'assets/vendor/jquery.min.js' %}"></script>-->
+<!--    &lt;!&ndash; Bootstrap &ndash;&gt;-->
+<!--    <script src="{% static 'assets/vendor/popper.min.js' %}"></script>-->
+<!--    <script src="{% static 'assets/vendor/bootstrap.min.js' %}"></script>-->
+<!--    &lt;!&ndash; Simplebar &ndash;&gt;-->
+<!--    <script src="{% static 'assets/vendor/simplebar.min.js' %}"></script>-->
+<!--    &lt;!&ndash; DOM Factory &ndash;&gt;-->
+<!--    <script src="{% static 'assets/vendor/dom-factory.js' %}"></script>-->
+<!--    &lt;!&ndash; MDK &ndash;&gt;-->
+<!--    <script src="{% static 'assets/vendor/material-design-kit.js' %}"></script>-->
+<!--    &lt;!&ndash; Range Slider &ndash;&gt;-->
+<!--    <script src="{% static 'assets/vendor/ion.rangeSlider.min.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/ion-rangeslider.js' %}"></script>-->
+<!--    &lt;!&ndash; App &ndash;&gt;-->
+<!--    <script src="{% static 'assets/js/toggle-check-all.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/check-selected-row.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/dropdown.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/sidebar-mini.js' %}"></script>-->
+<!--    <script src="{% static 'assets/js/app.js' %}"></script>-->
+<!--    &lt;!&ndash; App Settings (safe to remove) &ndash;&gt;-->
+<!--    <script src="{% static 'assets/js/app-settings.js' %}"></script>-->
+</body>
+
+
+</html>

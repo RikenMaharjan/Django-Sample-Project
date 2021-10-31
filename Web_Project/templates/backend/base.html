@@ -1,0 +1,97 @@
+{% load static %}
+<html lang="en">
+<head>
+    <!--        all the mandatory styles and js-->
+    {% block title %} {% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Short explanation about this website">
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet'
+          type='text/css'/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/theme-default/bootstrap.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/theme-default/materialadmin.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/theme-default/font-awesome.min.css' %}"/>
+    <link type="text/css" rel="stylesheet"
+          href="{% static 'css/theme-default/material-design-iconic-font.min.css' %}"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/theme-default/libs/rickshaw/rickshaw.css' %}"/>
+    <link type="text/css" rel="stylesheet"
+          href="{% static 'css/theme-default/libs/morris/morris.core.css' %}"/>
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+<header id="header">
+    {% include 'backend/partials/nav_bar/top_nav_bar.html' %}
+</header>
+<div id="base">
+
+    <!-- BEGIN OFFCANVAS LEFT -->
+    <div class="offcanvas">
+    </div><!--end .offcanvas-->
+    <!-- END OFFCANVAS LEFT -->
+
+    <!-- BEGIN CONTENT-->
+    <div id="content">
+        <section>
+            <div class="section-body">
+                {% block create_form %}
+
+                {% endblock %}
+                {% block body %}
+                
+                {% endblock %}
+            </div><!--end .section-body -->
+        </section>
+    </div><!--end #content-->
+    <!-- END CONTENT -->
+
+    <!-- BEGIN MENUBAR-->
+    <div id="menubar" class="menubar-inverse  animate">
+        {% include 'backend/partials/nav_bar/side_nav_bar.html' %}
+    </div><!--end #menubar-->
+    <!-- END MENUBAR -->
+
+</div>
+
+
+{% block js %}
+{% endblock %}
+
+
+<script src="{% static 'js/libs/jquery/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'js/libs/jquery/jquery-migrate-1.2.1.min.js' %}"></script>
+<script src="{% static 'js/libs/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/libs/spin.js/spin.min.js' %}"></script>
+<script src="{% static 'js/libs/autosize/jquery.autosize.min.js' %}"></script>
+<script src="{% static 'js/libs/moment/moment.min.js' %}"></script>
+<script src="{% static 'js/libs/flot/jquery.flot.min.js' %}"></script>
+<script src="{% static 'js/libs/flot/jquery.flot.time.min.js' %}"></script>
+<script src="{% static 'js/libs/flot/jquery.flot.resize.min.js' %}"></script>
+<script src="{% static 'js/libs/flot/jquery.flot.orderBars.js' %}"></script>
+<script src="{% static 'js/libs/flot/jquery.flot.pie.js' %}"></script>
+<script src="{% static 'js/libs/flot/curvedLines.js' %}"></script>
+<script src="{% static 'js/libs/jquery-knob/jquery.knob.min.js' %}"></script>
+<script src="{% static 'js/libs/sparkline/jquery.sparkline.min.js' %}"></script>
+<script src="{% static 'js/libs/nanoscroller/jquery.nanoscroller.min.js' %}"></script>
+<script src="{% static 'js/libs/d3/d3.min.js' %}"></script>
+<script src="{% static 'js/libs/d3/d3.v3.js' %}"></script>
+<script src="{% static 'js/libs/rickshaw/rickshaw.min.js' %}"></script>
+<script src="{% static 'js/core/source/App.js' %}"></script>
+<script src="{% static 'js/core/source/AppNavigation.js' %}"></script>
+<script src="{% static 'js/core/source/AppOffcanvas.js' %}"></script>
+<script src="{% static 'js/core/source/AppCard.js' %}"></script>
+<script src="{% static 'js/core/source/AppForm.js' %}"></script>
+<script src="{% static 'js/core/source/AppNavSearch.js' %}"></script>
+<script src="{% static 'js/core/source/AppVendor.js' %}"></script>
+<script src="{% static 'js/core/demo/Demo.js' %}"></script>
+<script src="{% static 'js/core/demo/DemoDashboard.js' %}"></script>
+
+</body>
+</html>

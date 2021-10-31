@@ -1,0 +1,14 @@
+{% extends 'backend/base.html' %}
+{% block body %}
+<strong>Title: </strong><em>{{ object.title }}</em><br>
+<strong>Name: </strong><em>{{ object.name||default:'No name' }}</em><br>
+<strong>Price: </strong><em>{{ object.price }}</em><br>
+
+<h1>{{date_now}}</h1>
+{% endblock %}
+
+{% block 'js' %}
+    <script>
+        var userName = "{{ object.name }}";
+    </script>
+{% endblock %}

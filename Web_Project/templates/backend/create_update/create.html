@@ -1,0 +1,11 @@
+{% extends 'backend/base.html' %}
+
+{% block create_form %}
+<div class="row">
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
